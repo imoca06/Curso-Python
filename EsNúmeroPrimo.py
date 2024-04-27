@@ -7,19 +7,19 @@ def es_primo(n):
             return False
     return True
 
-numero = 7
+numero = 13
 if es_primo(numero):
     print(f"{numero} es primo")
 else:
     print(f"{numero} no es primo")
 # devuelve: 7 es primo
 
-numero = 2568
+numero = 8637
 if es_primo(numero):
     print(f"{numero} es primo")
 else:
     print(f"{numero} no es primo")
-# devuelve: 2568 no es p
+# devuelve: 8537 es primo
 numero = 2978
 if es_primo(numero):
     print(f"{numero} es primo")

@@ -1,6 +1,6 @@
 # comprobar si un numero es capicua
 
-numero = 1234321
+numero = 13431545
 def es_capicua(numero):
     numero = str(numero)
     return numero == numero[::-1]
