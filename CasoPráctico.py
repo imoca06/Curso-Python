@@ -51,6 +51,7 @@ class GestorTareas:
     
 
 # Ejemplo de uso
+
 if __name__ == "__main__":
     gestor = GestorTareas()
     
@@ -62,20 +63,37 @@ if __name__ == "__main__":
     tarea4 = Tarea(4, "Comer")
     tarea5 = Tarea(5, "Recoger")
     tarea6 = Tarea(6, "Jugar coches")
+    tarea7 = Tarea(7, "Parquear")
    
-
     gestor.agregar_tarea(tarea1)
     gestor.agregar_tarea(tarea2)
     gestor.agregar_tarea(tarea3)
     gestor.agregar_tarea(tarea4)
     gestor.agregar_tarea(tarea5)
     gestor.agregar_tarea(tarea6)
+    gestor.agregar_tarea(tarea7)
 
     # Marcar tarea como completada
+
     print("\nTareas completadas:")  
+    gestor.marcar_completada(1)
     gestor.marcar_completada(2)
-    gestor.marcar_completada(4)
-    gestor.marcar_completada(6)
+
+    # Mostrar todas las tareas
+
+    print("\nTodas las tareas:") # Imprime Todas las tareas:
+    gestor.mostrar_tareas()
+
+    # Borrar tareas
+
+    print("\nTareas borradas:") # Imprime Tareas borradas:
+    gestor.borrar_tarea(1)
+    gestor.borrar_tarea(3)
+    gestor.borrar_tarea(5)
+
+    #buscar tarea borrada
+    print("\nTodas las tareas:") # Imprime Todas las tareas:
+    gestor.mostrar_tareas()
   
     
 
