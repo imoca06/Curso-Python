@@ -59,6 +59,8 @@ class GestorTareas:
 # Funcion para mostrar el menu
 
 def mostrar_menu():
+    print("\n ***** Bienvenido al Sistema de Gestión de Tareas *****\n")
+
     print("1. Agregar tarea") # Imprime 1. Agregar tarea
     print("2. Completar tarea") # Imprime 2. Completar tarea
     print("3. Mostrar tareas") # Imprime 3. Mostrar tareas
@@ -76,24 +78,49 @@ if __name__ == "__main__":
         opcion = input("Selecciona una opción: ")
         
         if opcion == "1":
-            id_tarea = int(input("Introduce el ID de la tarea: "))
-            nombre = input("Introduce la descripción de la tarea: ")
-            tarea = Tarea(id_tarea, nombre)
-            gestor.agregar_tarea(tarea)
+            try:
+                id_tarea = int(input("Introduce el ID de la tarea: "))
+                if id_tarea in gestor.tareas:
+                    print("Ya existe una tarea con ese ID.")
+                    continue
+                if id_tarea < 1:
+                    print("El ID de la tarea debe ser un número entero mayor o igual a 1.")
+                    continue
+                nombre = input("Introduce la descripción de la tarea: ")                
+                tarea = Tarea(id_tarea, nombre)
+                gestor.agregar_tarea(tarea)
+            except ValueError:
+                print("El ID de la tarea debe ser un número entero.")        
         elif opcion == "2":
-            id_tarea = int(input("Introduce el ID de la tarea que quieres marcar como completada: "))
-            gestor.marcar_completada(id_tarea)
+            try:
+                if not gestor.tareas:
+                    print("No hay tareas.")
+                    continue
+                if all(tarea.completada for tarea in gestor.tareas.values()):
+                    print("Todas las tareas ya están completadas.")
+                    continue
+                if id_tarea < 1:
+                    print("El ID de la tarea debe ser un número entero mayor o igual a 1.")
+                    continue
+                id_tarea = int(input("Introduce el ID de la tarea que quieres marcar como completada: "))
+                gestor.marcar_completada(id_tarea)
+            except ValueError:
+                print("El ID de la tarea debe ser un número entero.")
         elif opcion == "3":
             gestor.mostrar_tareas()
         elif opcion == "4":
-            id_tarea = int(input("Introduce el ID de la tarea que quieres eliminar: "))
-            gestor.borrar_tarea(id_tarea)
+            try:
+                id_tarea = int(input("Introduce el ID de la tarea que quieres eliminar: "))
+                gestor.borrar_tarea(id_tarea)
+            except ValueError:
+                print("El ID de la tarea debe ser un número entero.")
         # Si la opcion es 5 # limpia la pantalla
         elif opcion == "5":
             os.system('cls' if os.name == 'nt' else 'clear')
+            print("\nPantalla limpiada correctamente\n")
         # Si la opcion es 6 # Salir
         elif opcion == "6":
-            print("¡Hasta luego!")
+            print("Gracias por utilizar el sistema de gestión de tareas. \n¡Hasta pronto!\n")
             break
         # Si la opcion no es ninguna de las anteriores
         else:
