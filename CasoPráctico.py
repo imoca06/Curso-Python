@@ -23,7 +23,7 @@ class Tarea:
 class GestorTareas:
     def __init__(self):
         self.tareas = {}
-
+                   
         # Agregar tareas
     def agregar_tarea(self, tarea):        
         self.tareas[tarea.id_tarea] = tarea
@@ -74,41 +74,29 @@ if __name__ == "__main__":
     while True: # Mientras sea verdadero
         mostrar_menu() # Muestra el menu
         opcion = input("Selecciona una opción: ")
-        # Si la opcion es 1
+        
         if opcion == "1":
             id_tarea = int(input("Introduce el ID de la tarea: "))
-            # Si el id no es un numero entero
-            if id_tarea in gestor.tareas:
-                print("Ya existe una tarea con ese ID.")
-                continue                
-            nombre = input("Nombre de la tarea: ")
+            nombre = input("Introduce la descripción de la tarea: ")
             tarea = Tarea(id_tarea, nombre)
             gestor.agregar_tarea(tarea)
-     
-        # Si la opcion es 2 # Marcar tarea como completada
         elif opcion == "2":
             id_tarea = int(input("Introduce el ID de la tarea que quieres marcar como completada: "))
             gestor.marcar_completada(id_tarea)
-        # Si la opcion es 3 # Mostrar todas las tareas
         elif opcion == "3":
             gestor.mostrar_tareas()
-        # Si la opcion es 4 # Borrar tareas
         elif opcion == "4":
             id_tarea = int(input("Introduce el ID de la tarea que quieres eliminar: "))
             gestor.borrar_tarea(id_tarea)
-        # Si la opcion es 5 # limpia la pantalla                
+        # Si la opcion es 5 # limpia la pantalla
         elif opcion == "5":
-            import os
             os.system('cls' if os.name == 'nt' else 'clear')
-        # Si la opcion es 6 # Salir            
+        # Si la opcion es 6 # Salir
         elif opcion == "6":
-            print("¡Hasta luego!") # Imprime ¡Hasta luego!
+            print("¡Hasta luego!")
             break
-        # Si la opcion no es ninguna de las anteriores              
+        # Si la opcion no es ninguna de las anteriores
         else:
-            print("Opción no válida. Inténtelo de nuevo") # Imprime Opción no válida. Inténtelo de nuevo
-        
+            print("Opción no válida. Inténtelo de nuevo")
 
-
-
-
+# Fin del programa
