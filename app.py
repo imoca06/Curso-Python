@@ -20,6 +20,8 @@ while True:
     print("5. Limpiar pantalla")
     print("6. Salir")
 
+
+
     print("\n")
 
     # Entrada de datos para seleccionar una opción

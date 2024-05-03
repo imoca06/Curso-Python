@@ -76,7 +76,6 @@ if __name__ == "__main__":
     while True: # Mientras sea verdadero
         mostrar_menu() # Muestra el menu
         opcion = input("Selecciona una opción: ")
-        
         if opcion == "1":
             try:
                 id_tarea = int(input("Introduce el ID de la tarea: "))
@@ -113,7 +112,7 @@ if __name__ == "__main__":
                 id_tarea = int(input("Introduce el ID de la tarea que quieres eliminar: "))
                 gestor.borrar_tarea(id_tarea)
             except ValueError:
-                print("El ID de la tarea debe ser un número entero.")
+                print("El ID de la tarea debe ser un número entero.")                
         # Si la opcion es 5 # limpia la pantalla
         elif opcion == "5":
             os.system('cls' if os.name == 'nt' else 'clear')
