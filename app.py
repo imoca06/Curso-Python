@@ -1,3 +1,10 @@
+
+# Autor: Isidro M. @imoca06
+# Fecha: 2024/05/03
+
+# POO que gestionará una lista de tareas pendientes
+# Cada tarea se podrá agregar, marcar como completada, mostrar y eliminar
+
 import os
 import funciones 
 
@@ -24,9 +31,9 @@ while True:
         funciones.agregar_tarea(funciones.tareas)
     elif opcion == "2":
         funciones.marcar_como_completada(funciones.tareas)
-    elif opcion == "3":
+    elif opcion == "3": 
         funciones.mostrar_tareas(funciones.tareas)
-    elif opcion == "4":
+    elif opcion == "4": 
         funciones.eliminar_tarea(funciones.tareas)
     elif opcion == "5":
             os.system('cls' if os.name == 'nt' else 'clear')
