@@ -12,7 +12,7 @@ import funciones
 while True:
     
     # Menu de opciones
-    print("\n ***** Bienvenido al Sistema de Gestión de Tareas *****\n")
+    print("\n ******************************************************\n ***** Bienvenido al Sistema de Gestión de Tareas *****\n ******************************************************\n")
     print("1. Agregar tarea")
     print("2. Marcar como completada")
     print("3. Mostrar tareas")

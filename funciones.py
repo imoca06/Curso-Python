@@ -13,13 +13,13 @@ def agregar_tarea(lista):
 
 # Función para marcar una tarea como completada
 def marcar_como_completada(lista):
+    if len(lista) == 0:
+        print("No hay tareas en la lista")
+        return
     mostrar_tareas(lista)
     try:
         tarea = int(input("Introduzca el número de la tarea que desea marcar como completada: "))
-        if tarea > len(lista):
-            print("Número de tarea no válido")
-            return
-        if tarea <= 0:
+        if tarea > len(lista) or tarea <= 0:
             print("Número de tarea no válido")
             return
         if lista[tarea - 1] == "Completada":
@@ -42,10 +42,10 @@ def mostrar_tareas(lista):
 
 # Función para eliminar una tarea
 def eliminar_tarea(lista):
-    mostrar_tareas(lista)
     if len(lista) == 0:
         print("No hay tareas en la lista")
         return
+    mostrar_tareas(lista)
     try:
         tarea = int(input("Introduzca el número de la tarea que desea eliminar: "))
         if tarea > 0 and tarea <= len(lista):
